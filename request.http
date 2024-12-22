@@ -1,0 +1,35 @@
+# Inscription - Données génériques
+curl -X POST http://localhost:3000/security/register -H "Content-Type: application/json" -d "{\"email\":\"<votre-email>\",\"password\":\"<votre-password>\",\"fullName\":\"<votre-nom-complet>\",\"role\":\"<ROLE>\"}"
+
+# Connexion - Données génériques
+curl -X POST http://localhost:3000/security/login -H "Content-Type: application/json" -d "{\"email\":\"<votre-email>\",\"password\":\"<votre-password>\"}"
+
+# Voir tous les produits (token requis)
+curl -X GET http://localhost:3000/products -H "Authorization: Bearer <your_token>"
+
+# Ajouter un produit (avec des données génériques)
+curl -X POST http://localhost:3000/products -H "Authorization: Bearer <your_token>" -H "Content-Type: application/json" -d "{\"name\":\"<product-name>\",\"price\":<product-price>,\"description\":\"<product-description>\"}"
+
+# Ajouter un produit (avec des données génériques)
+curl -X POST http://localhost:3000/products -H "Authorization: Bearer <your_token>" -H "Content-Type: application/json" -d "{\"name\":\"<product-name>\",\"price\":<product-price>,\"description\":\"<product-description>\"}"
+
+# Voir un produit par ID (token requis)
+curl -X GET http://localhost:3000/products/<product_id> -H "Authorization: Bearer <your_token>"
+
+# Supprimer un produit (token requis)
+curl -X DELETE http://localhost:3000/products/<product_id> -H "Authorization: Bearer <your_token>"
+
+# Voir toutes les catégories (token requis)
+curl -X GET http://localhost:3000/categories -H "Authorization: Bearer <your_token>"
+
+# Ajouter une catégorie (avec des données génériques)
+curl -X POST http://localhost:3000/categories -H "Authorization: Bearer <your_token>" -H "Content-Type: application/json" -d "{\"name\":\"<category-name>\"}"
+
+# Voir une catégorie par ID (token requis)
+curl -X GET http://localhost:3000/categories/<category_id> -H "Authorization: Bearer <your_token>"
+
+# Voir toutes les commandes (token requis)
+curl -X GET http://localhost:3000/commands -H "Authorization: Bearer <your_token>"
+
+# Ajouter une commande (avec des données génériques)
+curl -X POST http://localhost:3000/commands -H "Authorization: Bearer <your_token>" -H "Content-Type: application/json" -d "{\"userId\":\"<user_id>\",\"totalPrice\":\"<total_price>\",\"status\":\"<status>\"}"
